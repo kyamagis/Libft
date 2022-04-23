@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 16:38:52 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/20 13:25:03 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/22 16:36:28 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_trimcpy(const char *s1, const char *set)
 	while ((s1[i] != '\0') && (ft_strchr(set, s1[i]) != 0))
 		i++;
 	if (i == len)
-		return ("");
+		return (ft_strdup(""));
 	j = 0;
 	while ((j < len) && (ft_strchr(set, s1[len - 1 - j]) != 0))
 		j++;

@@ -6,24 +6,26 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 18:31:34 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/14 18:46:58 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/22 15:21:41 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	lensrc;
+	char	*castsrc;
 
+	castsrc = (char *) src;
 	lensrc = ft_strlen(src);
 	if (size == 0)
 		return (lensrc);
 	i = 0;
-	while (i < size - 1 && src[i] != '\0')
+	while (i < size - 1 && castsrc[i] != '\0')
 	{
-		dest[i] = src[i];
+		dest[i] = castsrc[i];
 		i++;
 	}
 	dest[i] = '\0';

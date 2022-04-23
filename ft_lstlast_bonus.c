@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 15:28:07 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/21 12:20:40 by kyamagis         ###   ########.fr       */
+/*   Created: 2022/04/20 16:06:26 by kyamagis          #+#    #+#             */
+/*   Updated: 2022/04/23 09:56:35 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	len;
-
-	len = 0;
-	while (lst != NULL)
-	{
-		len++;
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next != NULL)
 		lst = lst->next;
-	}
-	return (len);
+	return (lst);
 }
 
 /*int main(void)
@@ -41,6 +37,9 @@ int	ft_lstsize(t_list *lst)
 	x->next = y;
 	y->next = z;
 	z->next = NULL;
-	
-	printf("%d", ft_lstsize(s));
+
+	s->content = "We are X";
+	z->content = "We are X";
+	printf("%s\n", (char *)ft_lstlast(s)->next);
+	printf("%s", (char *)ft_lstlast(s)->content);
 }*/

@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 16:31:06 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/14 16:54:44 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/22 16:27:23 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,30 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char	*substr;
-	size_t			size_start;
-	size_t			i;
+	char	*substr;
+	size_t	i;
 
 	if (s == NULL)
 		return (NULL);
-	substr = (unsigned char *)malloc (sizeof (unsigned char) * (len + 1));
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if (ft_strlen(s) < len)
+		len = ft_strlen(s);
+	substr = (char *)malloc (sizeof (char) * (len + 1));
 	if (substr == NULL)
 		return (NULL);
-	size_start = (size_t)start;
-	if (size_start >= ft_strlen(s))
-		return ((char *)substr);
 	i = 0;
-	while (i < len)
+	while ((i < len) && (s[start + i] != '\0'))
 	{
-		substr[i] = s[size_start + i];
+		substr[i] = s[start + i];
 		i++;
 	}
 	substr[i] = '\0';
-	return ((char *)substr);
+	return (substr);
 }
 
-/*char	*ft_putisnull(char const *str, size_t size)
+/*#include <string.h>
+char	*ft_putisnull(char const *str, size_t size)
 {
 	size_t	i;
 	char *addr;
@@ -57,6 +58,6 @@ int main(void)
 	unsigned int start = 0;
 	size_t len = 0;
 
-	printf("[printsubstr]%s\n", ft_substr(s, start, len));
-	printf("[exchangesub]%s\n",ft_putisnull(ft_substr(s, start, len), len + 2));
+	printf("[printsubstr]%s\n", ft_substr("tripouille", 100, 1));
+	printf("[exchangesub]%d\n",!strcmp(ft_substr("tripouille", 100, 1), ""));
 }*/

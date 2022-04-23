@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:11:25 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/09 20:47:01 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/22 17:28:10 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (dstsize - dstlen - 1 >= 0)
 	{
 		j = 0;
-		while (dstsize - dstlen - 1 > j)
+		while ((dstsize - dstlen - 1 > j) && (src[j] != '\0'))
 		{
 			dst[dstlen + j] = src[j];
 			j++;

@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 20:58:24 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/19 17:19:31 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/22 16:59:12 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_putnbr_fd(int n, int fd)
 	else if (n < 0)
 	{
 		x = -n;
-		ft_putchar_fd('-', 0);
+		ft_putchar_fd('-', fd);
 		ft_dig_p(dig, x, fd);
 	}
 }
@@ -62,7 +62,7 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_putnbr_fd(2147483647, 1);
 	printf("\n");
 	printf("[-2147483648]");
-	ft_putnbr_fd(-2147483648, 1);
+	ft_putnbr_fd(-2147483649, 1);
 	printf("\n");
 	printf("[          0]");
 	ft_putnbr_fd(0, 1);
