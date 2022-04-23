@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:38:43 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/23 18:17:16 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/23 18:37:41 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_discrim(size_t	num, int	flag)
 {
 	if ((flag == 1) && (num >= (LLONG_MAX)))
-			return ((int)LLONG_MAX);
+		return ((int)LLONG_MAX);
 	if ((flag == -1) && (1 <= ((num - 1) / LLONG_MAX)))
 		return ((int)LLONG_MIN);
 	return ((int)(num * flag));
