@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 21:38:40 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/19 16:19:42 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/23 17:33:17 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	*ft_findstr(const char *str, const char *to_find, size_t n)
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
+	if (haystack == NULL)
+		return (NULL);
 	if (ft_strlen(needle) > ft_strlen(haystack))
 		return (NULL);
 	if (needle[0] == '\0')

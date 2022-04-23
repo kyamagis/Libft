@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 18:20:19 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/23 09:56:15 by kyamagis         ###   ########.fr       */
+/*   Created: 2022/04/20 17:35:15 by kyamagis          #+#    #+#             */
+/*   Updated: 2022/04/23 16:19:05 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list	*lstnext;
-
 	if ((lst == NULL) || (del == NULL))
 		return ;
-	while (*lst != NULL)
-	{
-		lstnext = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		(*lst) = lstnext;
-	}
+	(*del)(lst->content);
+	free(lst);
 }
 
 /*int main(void)
@@ -49,7 +43,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	y->content = "EVA-02";
 	z->content = "EVA-08";
 
-	ft_lstclear(s, del);
+	ft_lstdelone(s, del);
 	printf("%s\n", (char *)s->content);
 	printf("%s\n", (char *)x->content);
 	printf("%s\n", (char *)y->content);

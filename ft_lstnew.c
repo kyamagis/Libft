@@ -1,46 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 15:28:07 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/23 09:56:54 by kyamagis         ###   ########.fr       */
+/*   Created: 2022/04/19 17:37:31 by kyamagis          #+#    #+#             */
+/*   Updated: 2022/04/23 16:19:30 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
-int	ft_lstsize(t_list *lst)
-{
-	int	len;
-
-	len = 0;
-	while (lst != NULL)
-	{
-		len++;
-		lst = lst->next;
-	}
-	return (len);
-}
-
-/*int main(void)
+t_list	*ft_lstnew(void *content)
 {
 	t_list	*s;
-	t_list	*x;
-	t_list	*y;
-	t_list	*z;
 
 	s = (t_list *)malloc(sizeof(t_list));
-	x = (t_list *)malloc(sizeof(t_list));
-	y = (t_list *)malloc(sizeof(t_list));
-	z = (t_list *)malloc(sizeof(t_list));
+	if (s == NULL)
+		return (NULL);
+	s->content = content;
+	s->next = NULL;
+	return (s);
+}
 
-	s->next = x;
-	x->next = y;
-	y->next = z;
-	z->next = NULL;
-	
-	printf("%d", ft_lstsize(s));
+/*int 	main(void)
+{
+	printf("%s\n", (char *)ft_lstnew("transam")->content);
+	printf("%s\n", (char *)ft_lstnew("transam")->next);
 }*/

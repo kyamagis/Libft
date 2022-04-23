@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:43:41 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/09 20:46:50 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/23 16:54:13 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	dch = (unsigned char *)dst;
 	sch = (const unsigned char *)src;
 	i = 0;
-	if ((dch == 0) && (sch == 0))
+	if ((dch == sch) || (n == 0))
 	{
 		return (dst);
 	}

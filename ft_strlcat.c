@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:11:25 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/22 17:28:10 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/23 17:28:13 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,25 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	j;
+	size_t	i;
 	size_t	dstlen;
 	size_t	srclen;
 
+    srclen = ft_strlen(src);
+    if (dst == NULL)
+        return (srclen + dstsize);
 	dstlen = ft_strlen(dst);
-	srclen = ft_strlen(src);
 	if (dstlen >= dstsize)
 		return (srclen + dstsize);
 	if (dstsize - dstlen - 1 >= 0)
 	{
-		j = 0;
-		while ((dstsize - dstlen - 1 > j) && (src[j] != '\0'))
+		i = 0;
+		while ((dstsize - dstlen - 1 > i) && (src[i] != '\0'))
 		{
-			dst[dstlen + j] = src[j];
-			j++;
+			dst[dstlen + i] = src[i];
+			i++;
 		}
-		dst[dstlen + j] = '\0';
+		dst[dstlen + i] = '\0';
 		return (dstlen + srclen);
 	}
 	return (0);
@@ -89,13 +91,14 @@ int    main(void)
     n = 10;
     printf("src4\n");
     printf("本家\n");
-    i = strlcat(dest2, src4, n);
+    i = strlcat("6", 0, 0);
     printf("%d\n", i);
-    printf("%s\n", dest2);
     printf("自作\n");
-    i = ft_strlcat(dest, src4, n);
+    printf("------------------------------\n");
+    printf("------------------------------\n");
+    printf("------------------------------\n");
+    i = ft_strlcat("7", 0, 0);
     printf("%d\n", i);
-    printf("%s\n", dest);
     printf("\n");
 
     return (0);

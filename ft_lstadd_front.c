@@ -1,56 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 16:46:08 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/23 09:55:36 by kyamagis         ###   ########.fr       */
+/*   Created: 2022/04/20 12:21:13 by kyamagis          #+#    #+#             */
+/*   Updated: 2022/04/23 16:18:53 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*last;
-
 	if ((lst == NULL) || (new == NULL))
 		return ;
-	if (*lst == NULL)
-	{
-		*lst = new;
-		return ;
-	}
-	last = ft_lstlast(*lst);
-	last->next = new;
-	new->next = NULL;
+	new->next = *lst;
+	*lst = new;
 }
 
-/*int main(void)
+/*int 	main(void)
 {
 	t_list **lst;
 	t_list *new;
-	t_list *x;
-	t_list *y;
-
+	
 	new = (t_list *)malloc(sizeof(t_list));
-	x = (t_list *)malloc(sizeof(t_list));
-	y = (t_list *)malloc(sizeof(t_list));
 	lst = (t_list **)malloc(sizeof(t_list));
 	*lst = (t_list *)malloc(sizeof(t_list));
 	new->content = "try";
-	new->next = x;
+	new->next = NULL;
 	(*lst)->content = "touch down";
-	(*lst)->next = y;
 	printf("[newcontent]%s\n", (char *)new->content);
 	printf("[newnext   ]%d\n", !!(char *)new->next);
 	printf("[lstcontent]%s\n", (char *)(*lst)->content);
 	printf("[lstnext   ]%d\n", !!(char *)(*lst)->next);
 	printf("\n");
-	ft_lstadd_back(lst, new);
+	ft_lstadd_front(lst, new);
 	printf("[lstcontent]%s\n", (char *)(*lst)->content);
 	printf("[lstnext   ]%d\n", !!(char *)(*lst)->next);
-	printf("[newnext   ]%d\n", !!(char *)new->next);
 }*/

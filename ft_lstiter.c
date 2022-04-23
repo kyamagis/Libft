@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 17:37:31 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/23 09:56:49 by kyamagis         ###   ########.fr       */
+/*   Created: 2022/04/20 18:27:34 by kyamagis          #+#    #+#             */
+/*   Updated: 2022/04/23 16:19:13 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*s;
-
-	s = (t_list *)malloc(sizeof(t_list));
-	if (s == NULL)
-		return (NULL);
-	s->content = content;
-	s->next = NULL;
-	return (s);
+	if ((lst == NULL) || (f == NULL))
+		return ;
+	while (lst != NULL)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
-
-/*int 	main(void)
-{
-	printf("%s\n", (char *)ft_lstnew("transam")->content);
-	printf("%s\n", (char *)ft_lstnew("transam")->next);
-}*/

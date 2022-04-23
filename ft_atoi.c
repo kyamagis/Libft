@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:38:43 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/20 11:45:17 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/23 18:17:16 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	ft_discrim(size_t	num, int	flag)
 {
+	if ((flag == 1) && (num >= (LLONG_MAX)))
+			return ((int)LLONG_MAX);
 	if ((flag == -1) && (1 <= ((num - 1) / LLONG_MAX)))
 		return ((int)LLONG_MIN);
 	return ((int)(num * flag));
@@ -48,7 +50,7 @@ int	ft_atoi(const char *str)
 	}
 	while ('0' <= str[i] && str[i] <= '9')
 	{
-		if ((flag == 1) && (num >= (LLONG_MAX / 10)) && ((str[i] - '0') > 5))
+		if ((flag == 1) && (num >= (ULLONG_MAX / 10)) && ((str[i] - '0') > 5))
 			return ((int)LLONG_MAX);
 		num = 10 * num + (str[i] - '0');
 		i++;
@@ -71,9 +73,9 @@ int	ft_atoi(const char *str)
 	char	src10[100] = " \f\n-\r\t\v1234ab567";
 	char	src11[100] = " \f\n-1\r\t\v1234ab567";
 	char	src12[100] = "9223372036854775808";
-	char	src13[100] = "-9223372036854775809";
-	char	src14[100] = "18446744073709551616";
-	char	src15[100] = "-922337203685477580800";
+	char	src13[100] = "18446744073709551616";
+	char	src14[100] = "18446744073709551614";
+	char	src15[100] = "9223372036854775806";
 	int		i;
 
 	i = 0;
