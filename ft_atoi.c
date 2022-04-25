@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:38:43 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/25 10:07:59 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/25 16:07:54 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ int	ft_atoi(const char *str)
 	i = 0;
 	while (ft_isspace(str[i]))
 		i++;
-	while ((str[i] == '-') || (str[i] == '+'))
+	if ((str[i] == '-') || (str[i] == '+'))
 	{
-		if ((str[i + 1] == '-') || (str[i + 1] == '+'))
-			return (0);
 		if (str[i] == '-')
 			flag = -1;
 		i++;
+		if ((str[i] == '-') || (str[i] == '+'))
+			return (0);
 	}
 	while (ft_isdigit(str[i]))
 	{
@@ -58,7 +58,6 @@ int	ft_atoi(const char *str)
 
 /*int	main(void)
 {
-	
 	char	src[100] = "";
 	char	src2[100] = "--1234ab567";
 	char	src3[100] = "5678VtFQwLApiFWqdJEvFxp_dvsdfza";
