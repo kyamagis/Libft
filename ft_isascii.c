@@ -6,18 +6,13 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 21:05:57 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/05 21:32:53 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/25 09:48:52 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	int	flag;
-
-	flag = 0;
-	if (0x00 <= c && c <= 0x7F)
-		flag = 1;
-	return (flag);
+	return ((0x00 <= c) && (c <= 0x7F));
 }
 
 /*#include <stdio.h>

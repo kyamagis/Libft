@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:38:43 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/23 18:37:41 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/25 10:07:59 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,10 @@ int	ft_discrim(size_t	num, int	flag)
 	return ((int)(num * flag));
 }
 
-int	ft_ispace(const char *str, size_t	i)
+int	ft_isspace(int c)
 {
-	if ((str[i] == ' ') || (str[i] == '\f') || (str[i] == '\n') \
-	|| (str[i] == '\r') || (str[i] == '\t') || (str[i] == '\v'))
-		return (1);
-	return (0);
+	return ((c == ' ') || (c == '\f') || (c == '\n') \
+	|| (c == '\r') || (c == '\t') || (c == '\v'));
 }
 
 int	ft_atoi(const char *str)
@@ -38,7 +36,7 @@ int	ft_atoi(const char *str)
 	flag = 1;
 	num = 0;
 	i = 0;
-	while (ft_ispace(str, i) == 1)
+	while (ft_isspace(str[i]))
 		i++;
 	while ((str[i] == '-') || (str[i] == '+'))
 	{
@@ -48,7 +46,7 @@ int	ft_atoi(const char *str)
 			flag = -1;
 		i++;
 	}
-	while ('0' <= str[i] && str[i] <= '9')
+	while (ft_isdigit(str[i]))
 	{
 		if ((flag == 1) && (num >= (ULLONG_MAX / 10)) && ((str[i] - '0') > 5))
 			return ((int)LLONG_MAX);

@@ -6,18 +6,13 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 21:34:50 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/06 14:12:36 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/25 09:50:15 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	int	flag;
-
-	flag = 0;
-	if (' ' <= c && c <= '~')
-		flag = 1;
-	return (flag);
+	return ((' ' <= c) && (c <= '~'));
 }
 
 /*#include <stdio.h>
