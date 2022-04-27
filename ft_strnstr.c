@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 21:38:40 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/23 17:33:17 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/27 11:11:22 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	if (needle[0] == '\0')
 		return ((char *)haystack);
 	else
-	{
 		return (ft_findstr(haystack, needle, len));
-	}
 }

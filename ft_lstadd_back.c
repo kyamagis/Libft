@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:46:08 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/23 16:18:48 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/27 10:36:56 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	last = ft_lstlast(*lst);
 	last->next = new;
-	new->next = NULL;
 }
 
 /*int main(void)
@@ -53,4 +52,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	printf("[lstcontent]%s\n", (char *)(*lst)->content);
 	printf("[lstnext   ]%d\n", !!(char *)(*lst)->next);
 	printf("[newnext   ]%d\n", !!(char *)new->next);
+	t_list * l =  NULL; t_list * l2 =  NULL; 
+	ft_lstadd_back(&l, ft_lstnew((void*)1));
+	ft_lstadd_back(&l, ft_lstnew((void*)2));
+	ft_lstadd_back(&l2, ft_lstnew((void*)3));
+	ft_lstadd_back(&l2, ft_lstnew((void*)4));
+	ft_lstadd_back(&l, l2);
+	printf("8,%d\n", l->next->next->content == (void*)3);
+	printf("9,%d\n", l->next->next->next->content == (void*)4);
+	printf("10,%d\n", l->next->next->next->next == 0);
 }*/

@@ -68,4 +68,4 @@ fclean: clean
 re: fclean all
 
 bonus:
-	make with bonus=1
+	make bonus=1
