@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 18:14:45 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/09 20:47:30 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/27 14:54:28 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (0);
 	i = 0;
 	while ((i < n - 1) && ((ss1[i] - ss2[i]) == 0) \
-	&& (ss1[i] != '\0'))
+	&& (ss1[i] != '\0') && (ss2[i] != '\0'))
 	{
 		i++;
 	}
