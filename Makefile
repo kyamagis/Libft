@@ -50,14 +50,17 @@ MAN_OBJS = $(MANDATORY:.c=.o)
 BON_OBJS = $(BONUS:.c=.o)
 NAME = libft.a
 
-all: $(NAME)
-
-#ifdef WITH_BONUS
+ifdef WITH_BONUS
 MAN_OBJS += $(BON_OBJS)
-#endif
+endif
+
+all: $(NAME)
 
 $(NAME): $(MAN_OBJS)
 	ar r $(NAME) $(MAN_OBJS)
+
+bonus:
+	make all WITH_BONUS=1
 
 clean:
 	rm -f $(MAN_OBJS) $(BON_OBJS)
@@ -67,5 +70,4 @@ fclean: clean
 
 re: fclean all
 
-bonus:
-	make WITH_bonus=1
+.PHONY: all clean fclean re bonus
