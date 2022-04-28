@@ -52,6 +52,10 @@ NAME = libft.a
 
 all: $(NAME)
 
+#ifdef WITH_BONUS
+MAN_OBJS += $(BON_OBJS)
+#endif
+
 $(NAME): $(MAN_OBJS)
 	ar r $(NAME) $(MAN_OBJS)
 
@@ -62,10 +66,6 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-ifdef WITH_BONUS
-MAN_OBJS += $(BON_OBJS)
-endif
 
 bonus:
 	make WITH_bonus=1

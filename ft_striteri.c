@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 18:29:14 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/18 20:48:50 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/27 20:01:07 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
-	if (s == NULL)
+	if (s == NULL || f == NULL)
 		return ;
 	i = 0;
 	while (s[i] != '\0')
@@ -34,7 +34,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 int main(void)
 {
 	char str[] = "201010101010";
-	ft_striteri(str, ft_0to1);
+	ft_striteri(str, NULL);
 	printf("%s\n",str);
 	return (0);
 }*/

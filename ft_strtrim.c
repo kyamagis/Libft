@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 16:38:52 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/22 16:36:28 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/27 19:40:08 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_trimcpy(const char *s1, const char *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	if (s1 == NULL)
+	if (s1 == NULL || set == NULL)
 		return (NULL);
 	return (ft_trimcpy(s1, set));
 }

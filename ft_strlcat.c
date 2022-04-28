@@ -6,11 +6,21 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:11:25 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/27 11:17:57 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/28 10:00:42 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+size_t	ft_lendst(char *dst, size_t dstsize)
+{
+	size_t	i;
+
+	i = 0;
+	while (dst[i] != '\0' && i < dstsize)
+		i++;
+	return (i);
+}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -18,9 +28,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	srclen;
 
 	srclen = ft_strlen(src);
-	if (dst == NULL)
-		return (srclen + dstsize);
-	dstlen = ft_strlen(dst);
+	dstlen = ft_lendst(dst, dstsize);
 	if (dstlen >= dstsize)
 		return (srclen + dstsize);
 	if (dstsize - dstlen - 1 >= 0)

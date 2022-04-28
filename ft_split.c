@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 13:25:17 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/19 16:20:45 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/27 19:56:33 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,14 @@ char	**ft_countidx(char const *s, char c)
 	return (strsplit);
 }
 
-void	*ft_free(char	**strsplit)
+void	*ft_free(char	**strsplit, size_t idx)
 {
-	free(strsplit);
+	free(strsplit[idx]);
+	while (0 < idx)
+	{
+		idx--;
+		free(strsplit[idx]);
+	}
 	return (NULL);
 }
 
@@ -56,7 +61,7 @@ char	**ft_strsplit(char	**strsplit, char const *s, char c)
 		{	
 			strsplit[idx] = ft_substr(s, start, i - start);
 			if (strsplit[idx] == NULL)
-				return (ft_free(strsplit));
+				return (ft_free(strsplit, idx));
 			idx++;
 		}
 	}

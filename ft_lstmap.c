@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 18:47:07 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/23 16:19:24 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/27 20:44:54 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*newlst;
 	t_list	*tmp;
 
-	if ((lst == NULL) || (f == NULL))
+	if (lst == NULL || f == NULL)
 		return (NULL);
 	newlst = NULL;
 	while (lst != NULL)
@@ -33,3 +33,40 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (newlst);
 }
+
+/*void	ft_putstr(void *s)
+{
+	int	i;
+
+	if (s == NULL)
+		return ;
+	i = 0;
+	while (s)
+	{
+		write (1, &s[i], 1);
+		i++;
+	}
+}
+void	*f(void *b)
+{
+	unsigned char	*bb;
+	size_t			i;
+
+	bb = (unsigned char *)b;
+	i = 0;
+	while (bb != '\0')
+	{
+		bb[i] = '0';
+		bb++;
+	}
+	return (bb);
+}
+int main(void)
+{
+	printf("6\n");
+	t_list *lst;
+	char s[] = "000";
+	printf("6\n");
+	//printf("6%s", ft_mem(s));
+	ft_lstmap(lst, f, ft_putstr);
+}*/

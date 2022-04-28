@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:38:43 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/27 16:26:52 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/27 20:04:33 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_atoi(const char *str)
 	return (ft_discrim(num, flag));
 }
 
-/*sint	main(void)
+/*int	main(void)
 {
 	char	src[100] = "";
 	char	src2[100] = "--1234ab567";

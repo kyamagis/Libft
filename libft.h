@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:15:05 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/27 15:30:33 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/27 19:33:58 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <limits.h>
 # include <unistd.h>
+# include <string.h>
 
 typedef struct s_list
 {
