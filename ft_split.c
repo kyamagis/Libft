@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 13:25:17 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/27 19:56:33 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/28 14:45:19 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,13 @@ char	**ft_countidx(char const *s, char c)
 
 void	*ft_free(char	**strsplit, size_t idx)
 {
-	free(strsplit[idx]);
 	while (0 < idx)
 	{
-		idx--;
 		free(strsplit[idx]);
+		idx--;
 	}
+	free(strsplit[idx]);
+	free(strsplit);
 	return (NULL);
 }
 
