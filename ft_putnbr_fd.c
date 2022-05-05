@@ -6,54 +6,22 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 20:58:24 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/22 16:59:12 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/04 22:26:12 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_dig_p(int dig, unsigned int x, int fd)
-{
-	char			c[10];
-
-	dig = 0;
-	while (x > 0)
-	{
-		c[dig] = '0' + x % 10;
-		x /= 10;
-		dig++;
-	}
-	while (dig > 0)
-	{
-		--dig;
-		ft_putchar_fd(c[dig], fd);
-	}
-}
-
 void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int	x;
-	int				dig;
-
-	dig = 0;
-	if (n > 0)
-	{	
-		x = n;
-		ft_dig_p(dig, x, fd);
-		return ;
-	}
-	else if (n == 0)
-	{	
-		x = n;
-		ft_putchar_fd('0', fd);
-		return ;
-	}
-	else if (n < 0)
-	{
-		x = -n;
+	if (-10 < n && n < 0)
 		ft_putchar_fd('-', fd);
-		ft_dig_p(dig, x, fd);
-	}
+	if (n <= -10 || 10 <= n)
+		ft_putnbr_fd(n / 10, fd);
+	n = n % 10;
+	if (n < 0)
+		n *= -1;
+	ft_putchar_fd('0' + n, fd);
 }
 
 /*int main (void)

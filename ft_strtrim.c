@@ -6,35 +6,30 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 16:38:52 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/27 19:40:08 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/05 11:49:06 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_trimcpy(const char *s1, const char *set)
-{
-	size_t	i;
-	size_t	j;
-	size_t	len;
-
-	len = ft_strlen(s1);
-	i = 0;
-	while ((s1[i] != '\0') && (ft_strchr(set, s1[i]) != 0))
-		i++;
-	if (i == len)
-		return (ft_strdup(""));
-	j = 0;
-	while ((j < len) && (ft_strchr(set, s1[len - 1 - j]) != 0))
-		j++;
-	return (ft_substr(s1, i, len - j - i));
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	if (s1 == NULL || set == NULL)
+	size_t	len;
+
+	if (s1 == NULL && set == NULL)
 		return (NULL);
-	return (ft_trimcpy(s1, set));
+	if (s1 == NULL)
+		return (NULL);
+	if (set == NULL)
+		return (ft_strdup(s1));
+	while ((*s1 != '\0') && (ft_strchr(set, *s1) != 0))
+		s1++;
+	if (*s1 == '\0')
+		return (ft_strdup(""));
+	len = ft_strlen(s1);
+	while ((0 < len) && (ft_strchr(set, s1[len - 1]) != 0))
+		len--;
+	return (ft_substr(s1, 0, len));
 }
 
 /*int	main(void)

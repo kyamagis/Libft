@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 21:38:40 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/27 19:52:21 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:38:10 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,13 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	printf("%s\n", strnstr("", to_find,0));
 	printf("%s\n", strnstr("", "",0));
 
-
 	printf("\n");
 	printf("%s\n", strstr(str, to_find));
 	printf("%s\n", strstr(str, ""));
 	printf("%s\n", strstr(str, "xyz"));
 	printf("%s\n", strstr("", to_find));
 	printf("%s\n", strstr("", ""));
-	return (0);
+
+	printf("origin%s\n", strnstr(NULL, "2", 0));
+	printf("makeft%s\n", ft_strnstr(NULL, "2", 0));
 }*/

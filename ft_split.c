@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 13:25:17 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/28 14:45:19 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:40:58 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,23 @@ void	*ft_free(char	**strsplit, size_t idx)
 
 char	**ft_strsplit(char	**strsplit, char const *s, char c)
 {
-	size_t	i;
-	size_t	start;
+	size_t	len;
 	size_t	idx;
 
-	i = 0;
-	start = 0;
 	idx = 0;
-	while (s[i] != '\0')
+	while (*s != '\0')
 	{
-		while ((s[i] == c) && (s[i] != '\0'))
-			i++;
-		start = i;
-		while ((s[i] != c) && (s[i] != '\0'))
-			i++;
-		if (i != start)
+		while ((*s == c) && (*s != '\0'))
+			s++;
+		len = 0;
+		while ((*s != c) && (*s != '\0'))
+		{
+			s++;
+			len++;
+		}
+		if (len != 0)
 		{	
-			strsplit[idx] = ft_substr(s, start, i - start);
+			strsplit[idx] = ft_substr(s - len, 0, len);
 			if (strsplit[idx] == NULL)
 				return (ft_free(strsplit, idx));
 			idx++;

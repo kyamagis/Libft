@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 14:26:49 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/27 19:02:13 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/04 22:24:39 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,19 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	lens1;
 	size_t	lens2;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL && s2 == NULL)
 		return (NULL);
+	if (s1 == NULL)
+		return (ft_strdup(s2));
+	if (s2 == NULL)
+		return (ft_strdup(s1));
 	lens1 = ft_strlen(s1);
 	lens2 = ft_strlen(s2);
-	str = malloc(sizeof(char) * (lens1 + lens2 + 1));
-	if (str == 0)
+	str = (char *)malloc(sizeof(char) * (lens1 + lens2 + 1));
+	if (str == NULL)
 		return (NULL);
 	ft_strlcpy(str, s1, lens1 + 1);
-	ft_strlcpy(&str[lens1], s2, lens2 + 1);
+	ft_strlcat(str, s2, lens1 + lens2 + 1 );
 	return (str);
 }
 

@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 19:54:34 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/27 10:59:19 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/04 23:09:35 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strdup(const char *s1)
 	char	*prc;
 	size_t	lens1;
 
+	if (s1 == NULL)
+		return (NULL);
 	lens1 = ft_strlen(s1);
 	prc = (char *)malloc(sizeof(char) * (lens1 + 1));
 	if (prc == 0)

@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:58:44 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/23 18:42:57 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/04/28 18:01:16 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
+	size_t	i;
 
 	if (s == NULL)
 		return ;
