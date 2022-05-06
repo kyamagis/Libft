@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 12:56:40 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/28 10:25:08 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/06 16:32:47 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t				i;
 	unsigned char		*dest;
 	const unsigned char	*sor;
 
@@ -24,15 +23,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (NULL);
 	if (dest < sor)
 		return (ft_memcpy(dst, src, len));
-	else
-	{
-		i = 0;
-		while (i < len)
-		{	
-			dest[len - i - 1] = sor[len - i - 1];
-			i++;
-		}
-	}
+	while (0 < len--)
+		dest[len] = sor[len];
 	return ((void *)dst);
 }
 

@@ -6,20 +6,25 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:34:37 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/25 10:00:35 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/06 17:35:38 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_digcount(unsigned int	x)
+size_t	ft_digcount(int n)
 {
-	size_t	dig;
+	size_t			dig;
+	unsigned int	x;
 
-	if (x == 0)
-		return (1);
-	dig = 0;
-	while (x > 0)
+	dig = 1;
+	x = n;
+	if (n < 0)
+	{
+		x = -n;
+		dig = 2;
+	}
+	while (x >= 10)
 	{
 		x /= 10;
 		dig++;
@@ -27,61 +32,39 @@ size_t	ft_digcount(unsigned int	x)
 	return (dig);
 }
 
-unsigned char	*ft_pumi_int(size_t	digcount, unsigned char	*c, int	n)
+unsigned char	*ft_int_to(size_t dig, unsigned char *str, int n)
 {
-	int				minus;
 	unsigned int	x;
+	int				minus;
 
 	x = n;
 	minus = 0;
 	if (n < 0)
-	{	
-		c[0] = '-';
-		minus = 1;
-		x = -n;
-	}
-	c[digcount + 1] = '\0';
-	while (0 < digcount)
 	{
-		digcount--;
-		c[digcount + minus] = '0' + x % 10;
+		x = -n ;
+		minus = -1;
+		str[0] = '-';
+	}
+	str[dig] = '\0';
+	while (0 < dig + minus)
+	{
+		dig--;
+		str[dig] = '0' + x % 10;
 		x /= 10;
 	}
-	return (c);
-}
-
-unsigned char	*ft_int_to(size_t	digcount, unsigned char	*c, int	n)
-{
-	if (c == 0)
-		return (NULL);
-	if (n == 0)
-	{	
-		c[0] = '0';
-		c[1] = '\0';
-		return (c);
-	}
-	return (ft_pumi_int(digcount, c, n));
+	return (str);
 }
 
 char	*ft_itoa(int n)
-{	
-	unsigned int	x;
-	int				minus;
-	size_t			digcount;
-	unsigned char	*c;
+{
+	size_t			dig;
+	unsigned char	*str;
 
-	minus = 0;
-	x = n;
-	if (n < 0)
-	{
-		minus = 1;
-		x = -n ;
-	}
-	digcount = ft_digcount(x);
-	c = (unsigned char *)malloc(sizeof(unsigned char) * (minus + digcount + 1));
-	if (c == NULL)
+	dig = ft_digcount(n);
+	str = (unsigned char *)malloc(sizeof(unsigned char) * (dig + 1));
+	if (str == NULL)
 		return (NULL);
-	return ((char *)ft_int_to(digcount, c, n));
+	return ((char *)ft_int_to(dig, str, n));
 }
 
 /*int	main(void)
@@ -89,5 +72,6 @@ char	*ft_itoa(int n)
 	printf("[ 2147483647] %s\n",ft_itoa(2147483647));
 	printf("[-2147483648]%s\n",ft_itoa(-2147483648));
 	printf("[          0]%s\n",ft_itoa(0));
+	printf("[          9]%s\n",ft_itoa(9));
 	return (0);
 }*/

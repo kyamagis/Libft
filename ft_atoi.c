@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:38:43 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/27 20:04:33 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/06 13:51:50 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	ft_isspace(int c)
 
 int	ft_atoi(const char *str)
 {
-	size_t	num;
-	size_t	i;
-	int		flag;
+	unsigned long	num;
+	size_t			i;
+	int				flag;
 
 	flag = 1;
 	num = 0;
@@ -43,8 +43,6 @@ int	ft_atoi(const char *str)
 		if (str[i] == '-')
 			flag = -1;
 		i++;
-		if ((str[i] == '-') || (str[i] == '+'))
-			return (0);
 	}
 	while (ft_isdigit(str[i]))
 	{

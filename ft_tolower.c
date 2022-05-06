@@ -6,17 +6,14 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 14:54:16 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/25 10:31:25 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/06 13:28:05 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
 	if ('A' <= c && c <= 'Z')
-	{
 		c += 'a' - 'A';
-		return (c);
-	}
 	return (c);
 }
 

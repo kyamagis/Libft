@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 19:54:34 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/04 23:09:35 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/06 16:07:02 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,15 @@ char	*ft_strdup(const char *s1)
 	char	*prc;
 	size_t	lens1;
 
-	if (s1 == NULL)
-		return (NULL);
 	lens1 = ft_strlen(s1);
 	prc = (char *)malloc(sizeof(char) * (lens1 + 1));
-	if (prc == 0)
+	if (prc == NULL)
 		return (NULL);
 	ft_strlcpy(prc, s1, lens1 + 1);
 	return (prc);
 }
 
-/*#include <string.h>
-#include <stdio.h>
-int main(void)
+/*int main(void)
 {
     char *src = "hello";
     printf("%s\n", ft_strdup(src));
@@ -38,4 +34,8 @@ int main(void)
     char *src1 = "";
     printf("%s\n", ft_strdup(src1));
     printf("%s\n", strdup(src1));
+
+	char *src2 = NULL;
+    printf("%s\n", ft_strdup(src2));
+    printf("%s\n", strdup(src2));
 }*/

@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 21:38:40 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/05 12:38:10 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/06 15:49:52 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	if (needle[0] == '\0')
 		return ((char *)haystack);
 	i = 0;
-	while (i + lennee <= len)
+	while (i + lennee <= len && i <= lenhay - lennee)
 	{
 		if (ft_strncmp(&haystack[i], needle, lennee) == 0)
 			return ((char *)&haystack[i]);
@@ -39,12 +39,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 /*int	main(void)
 {
 	const char	str[] = "Hellow!";
-	const char	to_find[] = "ll";
+	const char	to_find[] = "loi";
 
-	printf("\n");
 	printf("a%s\n", strnstr(NULL, NULL,0));
 	printf("%s\n", ft_strnstr(str, NULL,3));
-	printf("%s\n", strnstr(str, "HellowHellow",9));
+	printf("%s\n", strnstr(str, to_find, 20));
+	printf("%s\n", ft_strnstr(str, to_find, 20));
 	printf("%s\n", strnstr("", to_find,0));
 	printf("%s\n", strnstr("", "",0));
 

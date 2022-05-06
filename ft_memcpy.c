@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:43:41 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/28 10:26:46 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/06 16:32:13 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return ((void *)dst);
 }
 
-/*#include <string.h>
-#include <stdio.h>
-int	main(void)
+/*int	main(void)
 {
 	const char src1[] = "ABCDEFGHIJK";
 	const char src2[] = "ABCDEFGHIJK";
