@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:11:25 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/05 12:41:44 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/05 13:57:13 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,14 +98,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
     //i = ft_strlcat("7", 0, 0);
     printf("%d\n", i);
     printf("\n");
-
-    printf("------------------------------\n");
-    printf("------------------------------\n");
-    printf("------------------------------\n");
+    
     i = strlcat(0,"WORLD",0);
     printf("ORIGIN%d\n", i);
     i = ft_strlcat(NULL,"WORLD",0);
     printf("MAKEFT%d\n", i);
    
+    i = strlcat("WORLD",0,0);
+    printf("ORIGIN%d\n", i);
+    i = ft_strlcat("WORLD",0,0);
+    printf("MAKEFT%d\n", i);
     return (0);
 }*/
