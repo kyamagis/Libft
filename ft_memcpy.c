@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:43:41 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/06 16:32:13 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/07 11:18:14 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t				i;
-	unsigned char		*dch;
-	const unsigned char	*sch;
+	unsigned char		*duc;
+	const unsigned char	*suc;
 
-	dch = (unsigned char *)dst;
-	sch = (const unsigned char *)src;
+	duc = (unsigned char *)dst;
+	suc = (const unsigned char *)src;
 	i = 0;
-	if ((dch == sch) || (n == 0))
+	if ((duc == suc) || (n == 0))
 		return ((void *)dst);
 	while (i < n)
 	{	
-		dch[i] = sch[i];
+		duc[i] = suc[i];
 		i++;
 	}
 	return ((void *)dst);

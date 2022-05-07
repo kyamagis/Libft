@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:13:11 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/27 19:50:34 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/07 11:26:57 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t			j;
-	unsigned char	*ss;
+	size_t			lens;
+	unsigned char	*suc;
 
-	ss = (unsigned char *)s;
-	j = ft_strlen(s);
+	suc = (unsigned char *)s;
+	lens = ft_strlen(s);
 	if (c == 0)
-		return ((char *)ss + j);
-	while (0 < j)
+		return ((char *)suc + lens);
+	while (0 < lens)
 	{
-		j--;
-		if (ss[j] == (char)c)
-			return ((char *)ss + j);
+		lens--;
+		if (suc[lens] == (char)c)
+			return ((char *)suc + lens);
 	}
 	return (NULL);
 }

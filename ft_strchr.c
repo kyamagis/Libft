@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 15:00:46 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/27 22:04:48 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/07 11:23:22 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 char	*ft_strchr(const char *s, int c)
 {
 	size_t			i;
-	unsigned char	*uns;
-	unsigned char	unc;
+	unsigned char	*suc;
+	unsigned char	cuc;
 
-	uns = (unsigned char *)s;
-	unc = (unsigned char)c;
+	suc = (unsigned char *)s;
+	cuc = (unsigned char)c;
 	i = 0;
-	while (uns[i] != '\0')
+	while (suc[i] != '\0')
 	{
-		if (uns[i] == unc)
-			return ((char *)uns + i);
+		if (suc[i] == cuc)
+			return ((char *)suc + i);
 		i++;
 	}
-	if (unc == '\0')
-		return ((char *)uns + i);
+	if (cuc == '\0')
+		return ((char *)suc + i);
 	return (NULL);
 }
 

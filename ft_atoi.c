@@ -6,18 +6,22 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:38:43 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/06 13:51:50 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/07 14:40:58 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_discrim(size_t	num, int	flag)
+int	ft_discrim(unsigned long	num, int	flag, size_t	digcount)
 {
-	if ((flag == 1) && (num >= (LLONG_MAX)))
-		return ((int)LLONG_MAX);
-	if ((flag == -1) && (1 <= ((num - 1) / LLONG_MAX)))
-		return ((int)LLONG_MIN);
+	if (flag == 1 && 19 < digcount)
+		return ((int)LONG_MAX);
+	if (flag == 1 && LLONG_MAX <= num)
+		return ((int)LONG_MAX);
+	if (flag == -1 && 19 < digcount)
+		return ((int)LONG_MIN);
+	if (flag == -1 && LLONG_MAX <= num - 1)
+		return ((int)LONG_MIN);
 	return ((int)(num * flag));
 }
 
@@ -32,10 +36,12 @@ int	ft_atoi(const char *str)
 	unsigned long	num;
 	size_t			i;
 	int				flag;
+	size_t			digcount;
 
 	flag = 1;
 	num = 0;
 	i = 0;
+	digcount = 1;
 	while (ft_isspace(str[i]))
 		i++;
 	if ((str[i] == '-') || (str[i] == '+'))
@@ -46,31 +52,35 @@ int	ft_atoi(const char *str)
 	}
 	while (ft_isdigit(str[i]))
 	{
-		if ((flag == 1) && (num >= (ULLONG_MAX / 10)) && ((str[i] - '0') > 5))
-			return ((int)LLONG_MAX);
+		if (num != 0)
+			digcount++;
 		num = 10 * num + (str[i] - '0');
 		i++;
 	}
-	return (ft_discrim(num, flag));
+	return (ft_discrim(num, flag, digcount));
 }
 
 /*int	main(void)
 {
-	char	src[100] = "";
-	char	src2[100] = "--1234ab567";
-	char	src3[100] = "5678VtFQwLApiFWqdJEvFxp_dvsdfza";
-	char	src4[100] = "abc1234";
-	char	src5[100] = " +1+1234ab567";
-	char	src6[100] = " -1+1234ab567";
-	char	src7[100] = "+-1234ab567";
-	char	src8[100] = " \f\n\r\t\v1234ab567";
-	char	src9[100] = " \f\n1\r\t\v1234ab567";
-	char	src10[100] = " \f\n-\r\t\v1234ab567";
-	char	src11[100] = " \f\n-1\r\t\v1234ab567";
-	char	src12[100] = "9223372036854775808";
-	char	src13[100] = "18446744073709551616";
-	char	src14[100] = "18446744073709551614";
-	char	src15[100] = "9223372036854775806";
+	char	src[] = "";
+	char	src2[] = "--1234ab567";
+	char	src3[] = "5678VtFQwLApiFWqdJEvFxp_dvsdfza";
+	char	src4[] = "abc1234";
+	char	src5[] = " +1+1234ab567";
+	char	src6[] = " -1+1234ab567";
+	char	src7[] = "+-1234ab567";
+	char	src8[] = " \f\n\r\t\v1234ab567";
+	char	src9[] = " \f\n1\r\t\v1234ab567";
+	char	src10[] = " \f\n-\r\t\v1234ab567";
+	char	src11[] = " \f\n-1\r\t\v1234ab567";
+	char	src12[] = "2247483648";
+	char	src13[] = "9223372036854775806";
+	char	src14[] = "18446744073709551613";
+	char	src15[] = "18446744073709551616";
+	char	src16[] = "36893488147419103232";
+	char    src17[] = "63410682753376583680";
+	char    src18[] = "000000000000000000008";
+	char    src19[] = "9223372036854775808";
 	int		i;
 
 	i = 0;
@@ -140,29 +150,59 @@ int	ft_atoi(const char *str)
 	printf("自作:%d\n", i);
 	printf("\n");
 
+	printf("%s\n", src12);
 	i = atoi(src12);
 	printf("本家:%d\n", i);
 	i = ft_atoi(src12);
 	printf("自作:%d\n", i);
 	printf("\n");
 
+	printf("%s\n", src13);
 	i = atoi(src13);
 	printf("本家:%d\n", i);
 	i = ft_atoi(src13);
 	printf("自作:%d\n", i);
 	printf("\n");
 
+	printf("%s\n", src14);
 	i = atoi(src14);
 	printf("本家:%d\n", i);
 	i = ft_atoi(src14);
 	printf("自作:%d\n", i);
 	printf("\n");
 
+	printf("%s\n", src15);
 	i = atoi(src15);
 	printf("本家:%d\n", i);
 	i = ft_atoi(src15);
 	printf("自作:%d\n", i);
 	printf("\n");
 
-	return (0);
+	printf("%s\n", src16);
+	i = atoi(src16);
+	printf("本家:%d\n", i);
+	i = ft_atoi(src16);
+	printf("自作:%d\n", i);
+	printf("\n");
+
+	printf("%s\n", src17);
+	i = atoi(src17);
+	printf("本家:%d\n", i);
+	i = ft_atoi(src17);
+	printf("自作:%d\n", i);
+	printf("\n");
+
+	printf("%s\n", src18);
+	i = atoi(src18);
+	printf("本家:%d\n", i);
+	i = ft_atoi(src18);
+	printf("自作:%d\n", i);
+	printf("\n");
+
+	printf("%s\n", src19);
+	i = atoi(src19);
+	printf("本家:%d\n", i);
+	i = ft_atoi(src19);
+	printf("自作:%d\n", i);
+	printf("\n");
 }*/

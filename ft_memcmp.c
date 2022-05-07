@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:10:52 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/09 20:47:22 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/07 11:17:24 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t				i;
-	const unsigned char	*sc1;
-	const unsigned char	*sc2;
+	const unsigned char	*suc1;
+	const unsigned char	*suc2;
 
-	sc1 = (const unsigned char *)s1;
-	sc2 = (const unsigned char *)s2;
+	suc1 = (const unsigned char *)s1;
+	suc2 = (const unsigned char *)s2;
 	if (n == 0)
 		return (0);
 	i = 0;
-	while ((i < n - 1) && ((sc1[i] - sc2[i]) == 0))
+	while ((i < n - 1) && ((suc1[i] - suc2[i]) == 0))
 	{
 		i++;
 	}
-	return (sc1[i] - sc2[i]);
+	return (suc1[i] - suc2[i]);
 }
 
 /*#include <string.h>
