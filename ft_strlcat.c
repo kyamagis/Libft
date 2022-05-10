@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:11:25 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/06 13:41:15 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:39:39 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dstlen = 0;
 	if (dst != NULL)
 		dstlen = ft_lendst(dst, dstsize);
-	if (dstlen >= dstsize)
+	if (dstlen == dstsize)
 		return (srclen + dstsize);
 	ft_strlcpy(&dst[dstlen], src, dstsize - dstlen);
 	return (dstlen + srclen);

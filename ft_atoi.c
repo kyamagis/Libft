@@ -6,21 +6,21 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:38:43 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/07 14:40:58 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:37:14 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_discrim(unsigned long	num, int	flag, size_t	digcount)
+int	ft_dis_max_min(unsigned long	num, int	flag, size_t	digcount)
 {
 	if (flag == 1 && 19 < digcount)
 		return ((int)LONG_MAX);
-	if (flag == 1 && LLONG_MAX <= num)
+	if (flag == 1 && LONG_MAX <= num)
 		return ((int)LONG_MAX);
 	if (flag == -1 && 19 < digcount)
 		return ((int)LONG_MIN);
-	if (flag == -1 && LLONG_MAX <= num - 1)
+	if (flag == -1 && LONG_MAX <= num - 1)
 		return ((int)LONG_MIN);
 	return ((int)(num * flag));
 }
@@ -57,7 +57,7 @@ int	ft_atoi(const char *str)
 		num = 10 * num + (str[i] - '0');
 		i++;
 	}
-	return (ft_discrim(num, flag, digcount));
+	return (ft_dis_max_min(num, flag, digcount));
 }
 
 /*int	main(void)
