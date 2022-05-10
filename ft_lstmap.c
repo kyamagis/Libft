@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 18:47:07 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/27 20:44:54 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:59:00 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*newlst;
+	t_list	*lsttail;
 	t_list	*tmp;
 
 	if (lst == NULL || f == NULL)
 		return (NULL);
 	newlst = NULL;
+	lsttail = NULL;
 	while (lst != NULL)
 	{
 		tmp = ft_lstnew(f(lst->content));
@@ -28,7 +30,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&newlst, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&newlst, tmp);
+		lsttail -> next = tmp;
+		lsttail = lsttail -> next;
 		lst = lst->next;
 	}
 	return (newlst);

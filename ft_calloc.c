@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:52:38 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/22 15:15:23 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/10 18:49:48 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*addr;
 
-	if ((count == 0) || (size == 0))
-	{	
-		count = 1;
-		size = 1;
-	}
-	if ((SIZE_MAX / count) < size)
+	if ((count != 0) && (SIZE_MAX / count) < size)
 		return (NULL);
 	addr = malloc(count * size);
 	if (addr == NULL)
