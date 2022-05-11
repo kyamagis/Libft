@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 16:38:52 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/05 11:49:06 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:18:12 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;
 
-	if (s1 == NULL && set == NULL)
-		return (NULL);
 	if (s1 == NULL)
 		return (NULL);
 	if (set == NULL)
