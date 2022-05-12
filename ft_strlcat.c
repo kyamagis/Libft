@@ -6,13 +6,13 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:11:25 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/09 14:39:39 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/12 11:10:04 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_lendst(char *dst, size_t dstsize)
+static size_t	ft_lendst(char *dst, size_t dstsize)
 {
 	size_t	i;
 

@@ -6,13 +6,13 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 13:25:17 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/10 18:01:05 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/12 11:09:50 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_countidx(char const *s, char c)
+static char	**ft_countidx(char const *s, char c)
 {
 	size_t	i;
 	size_t	idx;
@@ -30,22 +30,23 @@ char	**ft_countidx(char const *s, char c)
 	return (strsplit);
 }
 
-void	*ft_free(char	**strsplit, size_t idx)
+static void	*ft_free(char	**strsplit, size_t idx)
 {
-	while (0 < idx)
+	size_t i;
+	
+	i = 0;
+	while (i < idx)
 	{
 		free(strsplit[idx]);
 		strsplit[idx] = NULL;
-		idx--;
+		i++;
 	}
-	free(strsplit[idx]);
-	strsplit[idx] = NULL;
 	free(strsplit);
 	strsplit = NULL;
 	return (NULL);
 }
 
-char	**ft_strsplit(char	**strsplit, char const *s, char c)
+static char	**ft_strsplit(char	**strsplit, char const *s, char c)
 {
 	size_t	len;
 	size_t	idx;

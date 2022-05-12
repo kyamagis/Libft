@@ -6,13 +6,13 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:34:37 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/06 17:35:38 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/12 11:08:51 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_digcount(int n)
+static size_t	ft_digcount(int n)
 {
 	size_t			dig;
 	unsigned int	x;
@@ -32,7 +32,7 @@ size_t	ft_digcount(int n)
 	return (dig);
 }
 
-unsigned char	*ft_int_to(size_t dig, unsigned char *str, int n)
+static unsigned char	*ft_int_to(size_t dig, unsigned char *str, int n)
 {
 	unsigned int	x;
 	int				minus;

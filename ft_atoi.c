@@ -6,13 +6,13 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:38:43 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/09 14:37:14 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/12 11:08:31 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_dis_max_min(unsigned long	num, int	flag, size_t	digcount)
+static int	ft_dis_max_min(unsigned long	num, int	flag, size_t	digcount)
 {
 	if (flag == 1 && 19 < digcount)
 		return ((int)LONG_MAX);
@@ -25,7 +25,7 @@ int	ft_dis_max_min(unsigned long	num, int	flag, size_t	digcount)
 	return ((int)(num * flag));
 }
 
-int	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	return ((c == ' ') || (c == '\f') || (c == '\n') \
 	|| (c == '\r') || (c == '\t') || (c == '\v'));
