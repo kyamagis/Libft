@@ -6,13 +6,13 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:38:43 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/12 11:08:31 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/12 12:56:55 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_dis_max_min(unsigned long	num, int	flag, size_t	digcount)
+static int	ft_dis_max_min(unsigned long num, int flag, size_t digcount)
 {
 	if (flag == 1 && 19 < digcount)
 		return ((int)LONG_MAX);

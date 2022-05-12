@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:15:05 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/27 19:33:58 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/12 12:27:35 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *s1);
 char			*ft_strtrim(char const *s1, char const *set);
-unsigned char	*ft_int_to(size_t	digcount, unsigned char	*c, int	n);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			**ft_split(char const *s, char c);
