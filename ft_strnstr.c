@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 21:38:40 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/06 15:49:52 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/30 20:01:59 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,21 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 /*int	main(void)
 {
-	const char	str[] = "Hellow!";
-	const char	to_find[] = "loi";
+	//const char	str[] = "Hellow!";
+	//const char	to_find[] = "loi";
 
-	printf("a%s\n", strnstr(NULL, NULL,0));
-	printf("%s\n", ft_strnstr(str, NULL,3));
-	printf("%s\n", strnstr(str, to_find, 20));
-	printf("%s\n", ft_strnstr(str, to_find, 20));
-	printf("%s\n", strnstr("", to_find,0));
-	printf("%s\n", strnstr("", "",0));
+	//printf("a%s\n", strnstr(NULL, NULL,0));
+	printf("%s\n", strnstr("ab", "a",4));
+	printf("%s\n", ft_strnstr("ab", "a",4));
+	// printf("%s\n", strnstr(str, to_find, 20));
+	// printf("%s\n", ft_strnstr(str, to_find, 20));
+	// printf("%s\n", strnstr("", to_find,0));
+	// printf("%s\n", ft_strnstr("", to_find,0));
+	// printf("%s\n", strnstr("", "",0));
+	// printf("%s\n", ft_strnstr("", "",0));
 
-	printf("\n");
-	printf("%s\n", strstr(str, to_find));
-	printf("%s\n", strstr(str, ""));
-	printf("%s\n", strstr(str, "xyz"));
-	printf("%s\n", strstr("", to_find));
-	printf("%s\n", strstr("", ""));
+	// printf("\n");
 
-	printf("origin%s\n", strnstr(NULL, "2", 0));
-	printf("makeft%s\n", ft_strnstr(NULL, "2", 0));
+	// printf("origin%s\n", strnstr(NULL, "2", 0));
+	// printf("makeft%s\n", ft_strnstr(NULL, "2", 0));
 }*/

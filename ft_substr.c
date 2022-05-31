@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 16:31:06 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/05 11:34:37 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/30 20:27:26 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (substr);
 }
 
-/*#include <string.h>
+/*
 char	*ft_putisnull(char const *str, size_t size)
 {
 	size_t	i;

@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 13:11:25 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/12 11:10:04 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/30 19:44:25 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
     char    src[100] = "qJxqmoQXo_rfaerf";
     char    src2[100] = "WXVfadcfuJkx_rgae";
     char    src3[100] = "VtFQwLApiFWqdJEvFxp_dvsdfza";
-    char    src4[100] = "abc";
     int        i;
     int        n;
 

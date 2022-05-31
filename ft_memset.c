@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 21:59:55 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/07 11:21:05 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:58:39 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memset(void *b, int c, size_t len)
 		buc[i] = (unsigned char)c;
 		i++;
 	}
-	return ((void *)buc);
+	return (b);
 }
 
 /*#include <stdio.h>

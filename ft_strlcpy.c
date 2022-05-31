@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 18:31:34 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/28 10:22:34 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/30 20:02:10 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	return (lensrc);
 }
 
-/*#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+/*
 void ft_putisnull(char *str, int size)
 {
     int    i;

@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:13:11 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/07 11:26:57 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/31 13:05:44 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ char	*ft_strrchr(const char *s, int c)
 	unsigned char	*suc;
 
 	suc = (unsigned char *)s;
-	lens = ft_strlen(s);
-	if (c == 0)
-		return ((char *)suc + lens);
+	lens = ft_strlen(s) + 1;
 	while (0 < lens)
 	{
 		lens--;
@@ -30,7 +28,7 @@ char	*ft_strrchr(const char *s, int c)
 	return (NULL);
 }
 
-/*#include <string.h>
+/*
 int	main(void)
 {
 	const char s[] = "0abc1abc2abc";

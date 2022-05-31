@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 16:38:52 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/11 13:18:12 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/05/13 16:29:16 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 /*int	main(void)
 {
-	char const s1[] = "12ABC1223DEF123";
+	char const s1[] = "1232312323ABC1223DEF123";
 	char const s2[] = "";
 	char const set1[] = "123";
 	char const set2[] = "GET_wild";
