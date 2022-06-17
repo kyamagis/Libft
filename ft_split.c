@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 13:25:17 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/12 12:57:24 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/06/17 17:26:40 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,29 @@ static char	**ft_countidx(char const *s, char c)
 	idx = 0;
 	while (s[i] != '\0')
 	{
-		if ((s[i] != c) && ((s[i + 1] == c) || (s[i + 1] == '\0')))
+		while (s[i] == c && s[i] != '\0')
+			i++;
+		if (s[i] != c)
 			idx++;
+		while (s[i] != c && s[i] != '\0')
+			i++;
 		i++;
 	}
 	strsplit = (char **)malloc(sizeof(char *) * (idx + 1));
 	return (strsplit);
 }
 
-static void	*ft_free(char	**strsplit, size_t idx)
+static char	**ft_free(char	**strsplit, size_t idx)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < idx)
+	while (0 < idx)
 	{
+		idx--;
 		free(strsplit[idx]);
 		strsplit[idx] = NULL;
-		i++;
 	}
 	free(strsplit);
 	strsplit = NULL;
-	return (NULL);
+	return (strsplit);
 }
 
 static char	**ft_strsplit(char	**strsplit, char const *s, char c)

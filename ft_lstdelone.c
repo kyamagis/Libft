@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:35:15 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/04/27 20:15:07 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/06/02 10:38:29 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		return ;
 	(*del)(lst->content);
 	free(lst);
+	lst = NULL;
 }
 
 /*int main(void)

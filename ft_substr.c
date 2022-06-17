@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 16:31:06 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/30 20:27:26 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/06/03 15:24:55 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (ft_strlen(&s[start]) < len)
 		len = ft_strlen(&s[start]);
+	if (len == SIZE_MAX)
+		return (NULL);
 	substr = (char *)malloc (sizeof (char) * (len + 1));
 	if (substr == NULL)
 		return (NULL);

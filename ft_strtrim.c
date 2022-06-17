@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 16:38:52 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/05/13 16:29:16 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/06/03 15:16:23 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	if (set == NULL)
 		return (ft_strdup(s1));
-	while ((*s1 != '\0') && (ft_strchr(set, *s1) != 0))
+	while ((*s1 != '\0') && (ft_strchr(set, *s1) != NULL))
 		s1++;
 	if (*s1 == '\0')
 		return (ft_strdup(""));
 	len = ft_strlen(s1);
-	while ((0 < len) && (ft_strchr(set, s1[len - 1]) != 0))
+	while ((0 < len) && (ft_strchr(set, s1[len - 1]) != NULL))
 		len--;
 	return (ft_substr(s1, 0, len));
 }
